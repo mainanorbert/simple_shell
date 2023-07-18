@@ -8,8 +8,7 @@
 int main(void)
 {
 	ssize_t len;
-	int i = 0;
-	char **args = NULL, *user_input = NULL;
+	char **args = NULL, *command, *user_input = NULL;
 	size_t buffer;
 
 	while (1)
@@ -25,10 +24,10 @@ int main(void)
 			continue;
 
 		args = array_func(user_input, len);	/*creates and returns an array*/
-		for (i = 0; args[i] != NULL; i++)
-			printf("%s\n", args[i]);
+		command = search_command(args[0]);
+		printf("The command is: %s\n", command);
 		free_mem(args);
-		free(args);
+		free(command);
 	}
 	return (0);
 }
