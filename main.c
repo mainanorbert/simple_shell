@@ -3,29 +3,40 @@
 /**
  * main - entry pont
  * Return: 0 on success
+ * @argc: number of arguments
+ * @argv: array of
  */
 
-int main(void)
+int main(__attribute__((unused))int argc, char **argv)
 {
 	ssize_t len;
 	char **args = NULL, *command, *user_input = NULL;
 	size_t buffer;
+	int count = 0;
 
 	while (1)
 	{
-		printf("$ ");
+		if (isatty(STDIN_FILENO))
+			printf("$ ");
 		len = getline(&user_input, &buffer, stdin);
 		if (len == -1)
-		{
-			free(user_input);
-			exit(EXIT_SUCCESS);
-		}
-		if (user_input[0] == '\n')
-			continue;
+			control_d(user_input);
 
 		args = array_func(user_input, len);	/*creates and returns an array*/
+		if (args[0] == NULL)
+		{
+			free_mem(args);
+			continue;
+		}
+		exit_func(args, user_input);
 		command = search_command(args[0]);
-		printf("The command is: %s\n", command);
+		if (command != NULL)
+			fork_func(command, args);
+		else
+		{
+			count++;
+			error_func(args[0], count, argv[0]);
+		}
 		free_mem(args);
 		free(command);
 	}
