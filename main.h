@@ -16,4 +16,5 @@ void exit_func(char **args, char *user_input);
 void fork_func(char *command, char **args);
 void error_func(char *str, int count, char *name);
 void control_d(char *user_input);
+void _printEnv(void);
 #endif

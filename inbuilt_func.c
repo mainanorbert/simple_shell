@@ -13,6 +13,20 @@ void exit_func(char **args, char *user_input)
 		free(user_input);
 		exit(EXIT_SUCCESS);
 	}
+
+}
+
+/**
+ * _printEnv - prints environment
+ */
+void _printEnv(void)
+{
+	int i;
+
+	for (i = 0; environ[i] != NULL; i++)
+	{
+		printf("%s\n", environ[i]);
+	}
 }
 
 /**
