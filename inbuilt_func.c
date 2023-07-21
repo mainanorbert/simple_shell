@@ -22,13 +22,14 @@ void exit_func(char **args, char *user_input)
 void _printEnv(void)
 {
 	int i;
+	char *env[1024];
 
 	for (i = 0; environ[i] != NULL; i++)
-	{
-		printf("%s\n", environ[i]);
-	}
+		env[i] = strdup(environ[i]);
+	env[i] = NULL;
+	for (i = 0; env[i] != NULL; i++)
+		free(env[i]);
 }
-
 /**
  * control_d - exits loops on -1
  * @user_input: user input to be freed
