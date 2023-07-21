@@ -17,4 +17,5 @@ void fork_func(char *command, char **args);
 void error_func(char *str, int count, char *name);
 void control_d(char *user_input);
 void _printEnv(void);
+int _strcmp(char*, char*);
 #endif

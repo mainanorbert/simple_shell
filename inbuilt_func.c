@@ -7,7 +7,7 @@
  */
 void exit_func(char **args, char *user_input)
 {
-	if (strcmp(args[0], "exit") == 0)
+	if (_strcmp(args[0], "exit") == 0)
 	{
 		free_mem(args);
 		free(user_input);
