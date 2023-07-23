@@ -9,6 +9,6 @@
 
 void error_func(char *str, int count, char *name)
 {
-	printf("%s: %d: %s: not found", name, count, str);
-	putchar('\n');
+	_printf("%s: %d: %s: not found", name, count, str);
+	_putchar('\n');
 }

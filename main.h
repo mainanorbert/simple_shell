@@ -18,4 +18,6 @@ void error_func(char *str, int count, char *name);
 void control_d(char *user_input);
 void _printEnv(void);
 int _strcmp(char*, char*);
+int _printf(const char *format, ...);
+int _putchar(char a);
 #endif

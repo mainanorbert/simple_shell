@@ -37,7 +37,7 @@ void _printEnv(void)
 void control_d(char *user_input)
 {
 	if (isatty(STDIN_FILENO))
-		putchar('\n');
+		_putchar('\n');
 	free(user_input);
 	exit(EXIT_SUCCESS);
 }

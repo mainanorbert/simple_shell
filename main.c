@@ -17,7 +17,7 @@ int main(__attribute__((unused))int argc, char **argv)
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
-			printf("$ ");
+			_printf("$ ");
 		len = getline(&user_input, &buffer, stdin);
 		if (len == -1)
 			control_d(user_input);
