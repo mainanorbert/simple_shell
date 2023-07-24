@@ -25,4 +25,7 @@ int _strcmp(char *s1, char *s2);
 int _strlen(char *str);
 char *_getEnv(char *env_variable);
 int _strncmp(char *str1, char *str2, size_t n);
+
+int _printf(const char *format, ...);
+int _putchar(char a);
 #endif
