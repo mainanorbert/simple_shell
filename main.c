@@ -30,7 +30,11 @@ int main(__attribute__((unused))int argc, char **argv)
 		}
 		exit_func(args, user_input);
 		if (_strcmp(args[0], "env") == 0)
+		{
 			_printEnv();
+			free_mem(args);
+			continue;
+		}
 		command = search_command(args[0]);
 		if (command != NULL)
 			fork_func(command, args);
