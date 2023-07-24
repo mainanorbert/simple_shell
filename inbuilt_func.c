@@ -25,7 +25,7 @@ void _printEnv(void)
 	char *env[1024];
 
 	for (i = 0; environ[i] != NULL; i++)
-		env[i] = strdup(environ[i]);
+		env[i] = _strdup(environ[i]);
 	env[i] = NULL;
 	for (i = 0; env[i] != NULL; i++)
 		free(env[i]);

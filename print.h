@@ -3,7 +3,6 @@
 int _putchar(char);
 int _printf(const char *format, ...);
 int _strscat(char *);
-int compare(const char *, ...);
 int number(int a);
 int bin(unsigned int);
 #include <stdarg.h>
