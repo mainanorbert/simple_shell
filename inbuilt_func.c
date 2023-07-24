@@ -21,14 +21,10 @@ void exit_func(char **args, char *user_input)
  */
 void _printEnv(void)
 {
-	int i;
-	char *env[1024];
+	int i = 0;
 
-	for (i = 0; environ[i] != NULL; i++)
-		env[i] = _strdup(environ[i]);
-	env[i] = NULL;
-	for (i = 0; env[i] != NULL; i++)
-		free(env[i]);
+	while (environ[i])
+		_printf("%s\n", environ[i++]);
 }
 /**
  * control_d - exits loops on -1
