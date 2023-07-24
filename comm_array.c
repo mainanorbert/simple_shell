@@ -17,7 +17,7 @@ char **array_func(char *user_input, ssize_t len)
 	input_copy = malloc(sizeof(char) * (len + 1));
 	if (input_copy == NULL)
 		return (NULL);
-	strcpy(input_copy, user_input);
+	_strcpy(input_copy, user_input);
 	token = strtok(input_copy, del);
 	while (token != NULL)
 	{
@@ -28,8 +28,8 @@ char **array_func(char *user_input, ssize_t len)
 	token = strtok(user_input, del);
 	while (token != NULL)
 	{
-		args[i] = malloc(sizeof(char) * (strlen(token) + 1));
-		strcpy(args[i], token);
+		args[i] = malloc(sizeof(char) * (_strlen(token) + 1));
+		_strcpy(args[i], token);
 		i++;
 		token = strtok(NULL, del);
 	}

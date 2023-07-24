@@ -17,4 +17,12 @@ void fork_func(char *command, char **args);
 void error_func(char *str, int count, char *name);
 void control_d(char *user_input);
 void _printEnv(void);
+char *_strcat(char *dest, char *src);
+char *_strncpy(char *dest, char *src, int n);
+char *_strdup(char *str);
+char *_strcpy(char *dest, const char *src);
+int _strcmp(char *s1, char *s2);
+int _strlen(char *str);
+char *_getEnv(char *env_variable);
+int _strncmp(char *str1, char *str2, size_t n);
 #endif

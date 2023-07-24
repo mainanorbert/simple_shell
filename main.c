@@ -29,7 +29,7 @@ int main(__attribute__((unused))int argc, char **argv)
 			continue;
 		}
 		exit_func(args, user_input);
-		if (strcmp(args[0], "env") == 0)
+		if (_strcmp(args[0], "env") == 0)
 			_printEnv();
 		command = search_command(args[0]);
 		if (command != NULL)
