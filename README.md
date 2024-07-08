@@ -58,10 +58,9 @@ To install and compile the simple shell, follow these steps:
    gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
 ## Usage
-`./hsh`
-
-$ `ls -l`
-$ `pwd`
-$ `cd /path/to/directory`
-$ `echo "Hello, World!"`
-$ `exit`
+1. `./hsh`
+2. $ `ls -l`
+3. $ `pwd`
+4. $ `cd /path/to/directory`
+5. $ `echo "Hello, World!"`
+6. $ `exit`
